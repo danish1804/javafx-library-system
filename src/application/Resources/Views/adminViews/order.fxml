@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="application.Java_files.Controller.viewAllOrdersController"
+      spacing="15" alignment="CENTER">
+  
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <!-- Title -->
+    <Label text="All Orders" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+    <!-- TableView for displaying orders -->
+    <TableView fx:id="ordersTableView" VBox.vgrow="ALWAYS">
+        <!-- Placeholder for empty table -->
+        <placeholder>
+            <Label text="No orders available." style="-fx-text-fill: gray; -fx-font-style: italic;"/>
+        </placeholder>
+
+        <columns>
+            <!-- Order ID Column -->
+            <TableColumn fx:id="orderIDColumn" text="Order ID" prefWidth="100"/>
+
+            <!-- Customer Name Column -->
+            <TableColumn fx:id="customerNameColumn" text="Customer Name" prefWidth="150"/>
+
+            <!-- Date of Order Column -->
+            <TableColumn fx:id="orderDateColumn" text="Date of Order" prefWidth="120"/>
+
+            <!-- Total Items Column -->
+            <TableColumn fx:id="totalItemsColumn" text="Total Items" prefWidth="100"/>
+
+            <!-- Total Price Column -->
+            <TableColumn fx:id="totalPriceColumn" text="Total Price" prefWidth="120"/>
+
+            <!-- Physical Copies Ordered Column -->
+            <TableColumn fx:id="physicalCopiesOrderedColumn" text="Physical Copies Ordered" prefWidth="150"/>
+
+            <!-- Ebook Copies Ordered Column -->
+            <TableColumn fx:id="ebookCopiesOrderedColumn" text="Ebook Copies Ordered" prefWidth="150"/>
+
+            <!-- Actions Column -->
+            <TableColumn fx:id="actionsColumn" text="Actions" prefWidth="120"/>
+        </columns>
+    </TableView>
+</VBox>

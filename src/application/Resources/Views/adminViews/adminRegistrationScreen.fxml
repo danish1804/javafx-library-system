@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.application.Java_files.Controller.adminRegistrationScreenController"
+            prefHeight="400.0" prefWidth="600.0"
+            styleClass="admin-registration-screen">
+    <VBox alignment="CENTER" spacing="15.0" AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0" 
+          AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+        <padding>
+            <Insets top="20.0" right="20.0" bottom="20.0" left="20.0"/>
+        </padding>
+        <Label text="Admin Registration" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+        <TextField fx:id="adminFirstNameField" promptText="First Name" maxWidth="250.0"/>
+        <TextField fx:id="adminLastNameField" promptText="Last Name" maxWidth="250.0"/>
+        <TextField fx:id="adminUsernameField" promptText="Admin Username" maxWidth="250.0"/>
+        <PasswordField fx:id="adminPasswordField" promptText="Admin Password" maxWidth="250.0"/>
+        <PasswordField fx:id="adminConfirmPasswordField" promptText="Confirm Password" maxWidth="250.0"/>
+        
+        
+        <!-- DatePicker for Admin DOB -->
+        <DatePicker fx:id="adminDOBPicker" promptText="Select Date of Birth" maxWidth="250.0"/>
+
+        <Button fx:id="adminRegisterButton" text="Register Admin" maxWidth="250.0" onAction="#handleAdminRegister"/>
+        <Hyperlink fx:id="adminBackToLoginLink" text="Back to Admin Login" onAction="#handleAdminBackToLogin"/>
+    </VBox>
+</AnchorPane>

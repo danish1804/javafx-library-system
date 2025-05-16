@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="application.Java_files.Controller.orderConfirmationScreenController"
+            stylesheets="@styles.css">
+    <top>
+        <VBox alignment="CENTER" spacing="10">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+            <Label text="Order Confirmation" styleClass="header-label"/>
+            <Label fx:id="orderNumberLabel" text="Order #: " styleClass="sub-header-label"/>
+            <Label fx:id="orderDateLabel" text="Date: " styleClass="sub-header-label"/>
+        </VBox>
+    </top>
+
+    <center>
+        <VBox spacing="20" alignment="TOP_CENTER">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+            <Label text="Order Summary" styleClass="section-label"/>
+            <TableView fx:id="orderSummaryTable" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="titleColumn" text="Title"/>
+                    <TableColumn fx:id="physicalCopiesColumn" text="Physical Copies"/>
+                    <TableColumn fx:id="ebookCopiesColumn" text="E-book Copies"/>
+                    <TableColumn fx:id="priceColumn" text="Price"/>
+                </columns>
+            </TableView>
+            <HBox alignment="CENTER_RIGHT">
+                <Label fx:id="totalPriceLabel" text="Total: $0.00" styleClass="total-price"/>
+            </HBox>
+        </VBox>
+    </center>
+
+    <bottom>
+        <HBox alignment="CENTER" spacing="10">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+            <Button fx:id="confirmOrderButton" text="Confirm Order" onAction="#handleConfirmOrder" styleClass="primary-button"/>
+            <Button fx:id="returnToDashboardButton" text="Cancel Order" onAction="#handleReturnToDashboard" styleClass="secondary-button"/>
+        </HBox>
+    </bottom>
+</BorderPane>

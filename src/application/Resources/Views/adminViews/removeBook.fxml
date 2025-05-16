@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.application.Java_files.Controller.removeBookController"
+      spacing="15"
+      alignment="CENTER"
+      style="-fx-padding: 20; -fx-background-color: #f8f9fa;">
+
+    <!-- Header Section -->
+    <Label text="Remove Book from Database"
+           style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+
+    <!-- Instruction Section -->
+    <Label text="Please select a book from the list below and click 'Remove Book' to delete it from the database."
+           wrapText="true"
+           style="-fx-font-size: 14px; -fx-text-fill: #7f8c8d;"/>
+
+    <!-- ComboBox for Book Selection -->
+    <HBox spacing="10" alignment="CENTER" maxWidth="Infinity">
+        <Label text="Select Book:"
+               style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"
+               alignment="CENTER_LEFT"/>
+        <ComboBox fx:id="bookSelector"
+                  promptText="Select a book"
+                  maxWidth="250"
+                  style="-fx-background-color: #ffffff; -fx-border-color: #bdc3c7; -fx-border-radius: 4px;"/>
+    </HBox>
+
+    <!-- Remove Book Button -->
+    <Button text="Remove Book"
+            onAction="#handleRemoveBook"
+            maxWidth="150"
+            style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-background-radius: 4px;"/>
+
+    <!-- Back to Dashboard Button -->
+    <Button text="Back to Dashboard"
+            onAction="#handleBackToDashboard"
+            maxWidth="150"
+            style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-background-radius: 4px;"/>
+
+</VBox>

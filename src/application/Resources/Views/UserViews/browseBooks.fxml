@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="application.Java_files.Controller.browseBooksController" spacing="10">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+    
+    <Label text="Reading Room Browser" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+    
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <TextField fx:id="searchField" promptText="Enter keyword to search" HBox.hgrow="ALWAYS"/>
+        <Button text="Search" onAction="#handleSearch"/>
+    </HBox>
+    
+    <TableView fx:id="bookTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="bookIdColumn" text="Book ID"/>
+            <TableColumn fx:id="titleColumn" text="Title"/>
+            <TableColumn fx:id="authorColumn" text="Author"/>
+            <TableColumn fx:id="physicalCopiesColumn" text="Physical Copies"/>
+            <TableColumn fx:id="ebookColumn" text="E-book Available"/>
+            <TableColumn fx:id="physicalPriceColumn" text="Physical Price"/>
+            <TableColumn fx:id="ebookPriceColumn" text="E-book Price"/>
+            <TableColumn fx:id="addToCartColumn" text="Add to Cart"/>
+        </columns>
+    </TableView>
+    
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Button text="View Cart" onAction="#handleViewCart"/>
+    </HBox>
+</VBox>

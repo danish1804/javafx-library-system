@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="application.Java_files.Controller.CartViewController" spacing="10">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <Label text="Your Shopping Cart" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+
+    <TableView fx:id="cartTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="bookIdColumn" text="Book ID"/>
+            <TableColumn fx:id="titleColumn" text="Title"/>
+            <TableColumn fx:id="authorColumn" text="Author"/>
+            <TableColumn fx:id="physicalCopiesColumn" text="Physical Copies"/>
+            <TableColumn fx:id="ebookCopiesColumn" text="E-book Copies"/>
+            <TableColumn fx:id="totalCostColumn" text="Total Cost"/>
+            <TableColumn fx:id="actionsColumn" text="Actions"/>
+        </columns>
+    </TableView>
+
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Label fx:id="totalCostLabel" style="-fx-font-size: 18px;"/>
+        <Button text="Checkout" onAction="#handleCheckout"/>
+        <Button text="Close" onAction="#handleClose"/>
+    </HBox>
+</VBox>

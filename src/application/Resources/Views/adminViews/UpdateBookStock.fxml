@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8"
+      fx:controller="application.Controller.adminUpdateBookStockController"
+      spacing="15" alignment="CENTER" style="-fx-padding: 20;">
+    <Label text="Update Book Stock and Prices" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+    
+    <HBox spacing="10" alignment="CENTER">
+        <Label text="Search Book:" prefWidth="120"/>
+        <TextField fx:id="searchField" prefWidth="200"/>
+        <Button text="Search" onAction="#handleSearch"/>
+    </HBox>
+    
+    <HBox spacing="10" alignment="CENTER">
+        <Label text="Select Book:" prefWidth="120"/>
+        <ComboBox fx:id="bookComboBox" prefWidth="300"/>
+    </HBox>
+    
+    <HBox spacing="10" alignment="CENTER">
+        <Label text="Physical Copies:" prefWidth="120"/>
+        <TextField fx:id="physicalCopiesField" prefWidth="100"/>
+    </HBox>
+    
+    <HBox spacing="10" alignment="CENTER">
+        <Label text="E-book Available:" prefWidth="120"/>
+        <CheckBox fx:id="ebookAvailableCheckBox"/>
+    </HBox>
+    
+    <HBox spacing="10" alignment="CENTER">
+        <Label text="Physical Price:" prefWidth="120"/>
+        <TextField fx:id="physicalPriceField" prefWidth="100"/>
+    </HBox>
+    
+    <HBox spacing="10" alignment="CENTER">
+        <Label text="E-book Price:" prefWidth="120"/>
+        <TextField fx:id="ebookPriceField" prefWidth="100"/>
+    </HBox>
+    
+    <HBox spacing="20" alignment="CENTER">
+        <Button text="Update" onAction="#handleUpdate" prefWidth="100"/>
+        <Button text="Cancel" onAction="#handleCancel" prefWidth="100"/>
+    </HBox>
+</VBox>

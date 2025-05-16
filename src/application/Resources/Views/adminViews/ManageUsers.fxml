@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8"
+      fx:controller="com.readingroom.controller.ManageUsersController"
+      spacing="15" alignment="CENTER" style="-fx-padding: 20;">
+    
+    <!-- Title -->
+    <Label text="Manage Users" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+    
+    <!-- Search Field -->
+    <HBox spacing="10" alignment="CENTER">
+        <TextField fx:id="searchField" promptText="Search users" HBox.hgrow="ALWAYS"/>
+        <Button fx:id = "searchButton" text="Search" onAction="#handleSearch"/>
+    </HBox>
+    
+    <!-- Users Table -->
+    <TableView fx:id="userTableView" VBox.vgrow="ALWAYS">
+        <placeholder>
+            <Label text="No users found."/>
+        </placeholder>
+        <columns>
+            <TableColumn fx:id="userIdColumn" text="User ID"/>
+            <TableColumn fx:id="usernameColumn" text="Username"/>
+            <TableColumn fx:id="firstNameColumn" text="First Name"/>
+            <TableColumn fx:id="lastNameColumn" text="Last Name"/>
+            <TableColumn fx:id="dobColumn" text="Date of Birth"/>
+        </columns>
+    </TableView>
+    
+    <!-- User Details Section -->
+    <GridPane hgap="10" vgap="10" styleClass="user-details-grid">
+        <Label text="First Name:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+        <TextField fx:id="firstNameField" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+        
+        <Label text="Last Name:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+        <TextField fx:id="lastNameField" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+        
+        <Label text="Date of Birth:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+        <DatePicker fx:id="dobPicker" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+    </GridPane>
+    
+    <!-- Action Buttons -->
+    <HBox spacing="15" alignment="CENTER">
+        <Button fx:id= "updateUserButton" text="Update User" onAction="#handleUpdateUser" styleClass="primary-button"/>
+        <Button fx:id = "viewAllOrdersButton" text="View Orders" onAction="#handleViewOrders" styleClass="secondary-button"/>
+        <Button fx:id = "backToDashboardButton" text="Back to Dashboard" onAction="#handleBack" styleClass="secondary-button"/>
+    </HBox>
+</VBox>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="application.Java_files.Controller.UserOrdersController"
+      spacing="10">
+    
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <!-- Title -->
+    <Label text="Your Past Orders" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+    <!-- Table to display user orders -->
+    <TableView fx:id="ordersTableView" prefHeight="400.0">
+        <columns>
+            <!-- Order ID Column -->
+            <TableColumn fx:id="orderIDColumn" text="Order ID" prefWidth="100"/>
+            
+            <!-- Order Book ID Column -->
+            <TableColumn fx:id="orderBookIDColumn" text="Book ID" prefWidth="100"/>
+            
+            <!-- Order Book Name Column -->
+            <TableColumn fx:id="orderBookNameColumn" text="Book Name" prefWidth="150"/>
+            
+            <!-- Order Date Column -->
+            <TableColumn fx:id="orderDateColumn" text="Order Date" prefWidth="150"/>
+			
+			<!-- Physical Copies Column -->
+            <TableColumn fx:id="physicalCopiesColumn" text="Physical Copies" prefWidth="100"/>
+
+            <!-- Ebook Copies Column -->
+            <TableColumn fx:id="ebookCopiesColumn" text="Ebook Copies" prefWidth="100"/>
+            
+            <!-- Total Items Column -->
+            <TableColumn fx:id="totalItemsColumn" text="Total Items" prefWidth="100"/>
+
+            <!-- Total Price Column -->
+            <TableColumn fx:id="totalPriceColumn" text="Total Price" prefWidth="100"/>
+
+            
+        </columns>
+    </TableView>
+
+    <!-- Back Button -->
+    <Button text="Back to Dashboard" onAction="#handleBackToDashboard"/>
+
+</VBox>

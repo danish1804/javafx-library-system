@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="application.Controller.adminLoginPageController"
+            prefHeight="400.0" prefWidth="600.0"
+            styleClass="admin-login-screen">
+    <VBox alignment="CENTER" spacing="15.0" AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0" 
+          AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+        <padding>
+            <Insets top="20.0" right="20.0" bottom="20.0" left="20.0"/>
+        </padding>
+        <Label text="Admin Login" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+        <TextField fx:id="adminUsernameField" promptText="Admin Username" maxWidth="250.0"/>
+        <PasswordField fx:id="adminPasswordField" promptText="Admin Password" maxWidth="250.0"/>
+        <Button fx:id="adminLoginButton" text="Login" maxWidth="250.0" onAction="#handleAdminLogin"/>
+        <Hyperlink fx:id="adminRegisterLink" text="New Admin? Register" onAction="#handleAdminRegisterLink"/>
+        <Hyperlink fx:id="adminBackLink" text="Back to Choice Screen" onAction="#handleAdminBackLink"/>
+    </VBox>
+</AnchorPane>

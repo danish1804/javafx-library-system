@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.application.Java_files.Controller.EditProfileController"
+      spacing="10">
+    
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <!-- Title -->
+    <Label text="Edit Profile" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+    <!-- First Name -->
+    <TextField fx:id="firstNameField" promptText="First Name" maxWidth="300.0"/>
+
+    <!-- Last Name -->
+    <TextField fx:id="lastNameField" promptText="Last Name" maxWidth="300.0"/>
+
+    <!-- Username -->
+    <TextField fx:id="usernameField" promptText="Username" maxWidth="300.0"/>
+
+    <!-- Date of Birth -->
+    <DatePicker fx:id="dobPicker" promptText="Date of Birth"/>
+
+    <!-- Update Button -->
+    <Button text="Update Profile" onAction="#handleUpdateProfile" maxWidth="300.0"/>
+
+    <!-- Back to Dashboard Button -->
+    <Button text="Back to Dashboard" onAction="#handleBackToDashboard" maxWidth="300.0"/>
+
+</VBox>

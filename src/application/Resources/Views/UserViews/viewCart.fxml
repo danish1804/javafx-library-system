@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" 
+            fx:controller="application.Java_files.Controller.CartViewController" 
+            stylesheets="@/application/Resources/Styles/cart-styles.css">
+    <top>
+        <VBox alignment="CENTER" spacing="10" styleClass="header">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+            <Label text="Your Shopping Cart" styleClass="title-label">
+                <font>
+                    <Font name="System Bold" size="24"/>
+                </font>
+            </Label>
+        </VBox>
+    </top>
+
+    <center>
+        <TableView fx:id="cartTable" styleClass="cart-table">
+            <columns>
+                <TableColumn fx:id="bookIdColumn" text="Book ID"/>
+                <TableColumn fx:id="titleColumn" text="Title"/>
+                <TableColumn fx:id="authorColumn" text="Title"/>
+                <TableColumn fx:id="physicalCopiesColumn" text="Physical Copies"/>
+                <TableColumn fx:id="ebookCopiesColumn" text="E-book Copies"/>
+                <TableColumn fx:id="totalCostColumn" text="Total Cost"/>
+                <TableColumn fx:id="removeColumn" text="Remove"/>
+            </columns>
+            <placeholder>
+                <Label text="Your cart is empty" styleClass="empty-cart-label"/>
+            </placeholder>
+        </TableView>
+    </center>
+
+    <bottom>
+        <VBox spacing="10" alignment="CENTER_RIGHT" styleClass="footer">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+            <HBox spacing="10" alignment="CENTER_RIGHT">
+                <Label text="Total:" styleClass="total-label">
+                    <font>
+                        <Font name="System Bold" size="18"/>
+                    </font>
+                </Label>
+                <Label fx:id="totalCostLabel" styleClass="total-cost-label">
+                    <font>
+                        <Font name="System Bold" size="18"/>
+                    </font>
+                </Label>
+            </HBox>
+            <HBox spacing="10" alignment="CENTER_RIGHT">
+                <Button text="Continue Shopping" onAction="#handleContinueShopping" styleClass="continue-button"/>
+                <Button text="Checkout" onAction="#handleCheckout" styleClass="checkout-button"/>
+            </HBox>
+        </VBox>
+    </bottom>
+</BorderPane>

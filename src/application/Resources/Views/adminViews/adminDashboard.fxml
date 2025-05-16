@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx/16"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="application.Java_files.Controller.AdminDashboardController"
+            prefHeight="600.0" prefWidth="800.0">
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="10" style="-fx-background-color: #f0f0f0; -fx-padding: 10;">
+            <Label text="Admin Dashboard" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+            <Region HBox.hgrow="ALWAYS" />
+            <Button fx:id="logoutButton" text="Logout" onAction="#handleLogout"/>
+        </HBox>
+    </top>
+
+    <left>
+        <VBox spacing="10" style="-fx-background-color: #e0e0e0; -fx-padding: 10;">
+            <Button text="Manage Books" onAction="#handleManageBooks" maxWidth="Infinity"/>
+            <Button text="View Book Stock" onAction="#handleViewBookStock" maxWidth="Infinity"/>
+            <Button text="Update Book Stock" onAction="#handleUpdateBookStock" maxWidth="Infinity"/>
+            <Button text="Add New Book" onAction="#handleAddNewBook" maxWidth="Infinity"/>
+            <Button text="View All Orders" onAction="#handleViewAllOrders" maxWidth="Infinity"/>
+            <Button text="Manage Users" onAction="#handleManageUsers" maxWidth="Infinity"/>
+            <Button text="Generate Reports" onAction="#handleGenerateReports" maxWidth="Infinity"/>
+        </VBox>
+    </left>
+
+    <center>
+        <VBox alignment="CENTER" spacing="20">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+            <Label fx:id="welcomeLabel" text="Welcome, Admin!" style="-fx-font-size: 20px;"/>
+			<Label fx:id="instructionLabel" text="Select an option from the left menu to get started." style="-fx-font-size: 16px;"/>
+        </VBox>
+    </center>
+</BorderPane>

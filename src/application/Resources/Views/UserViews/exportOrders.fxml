@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.application.Java_files.Controller.exportOrdersController">
+    <top>
+        <Label text="Export Orders" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-padding: 10;"/>
+    </top>
+    
+    <center>
+        <VBox spacing="10" style="-fx-padding: 10;">
+            <ListView fx:id="ordersListView" VBox.vgrow="ALWAYS"/>
+            <HBox spacing="10">
+                <Label text="File Name:"/>
+                <TextField fx:id="fileNameField" HBox.hgrow="ALWAYS"/>
+            </HBox>
+            <HBox spacing="10">
+                <Label text="Destination Folder:"/>
+                <TextField fx:id="destinationFolderField" HBox.hgrow="ALWAYS"/>
+                <Button text="Browse" onAction="#handleBrowseDestination"/>
+            </HBox>
+        </VBox>
+    </center>
+    
+    <bottom>
+        <HBox alignment="CENTER" spacing="10" style="-fx-padding: 10;">
+            <Button text="Export" onAction="#handleExport"/>
+            <Button text="Back to Dashboard" onAction="#handleBackToDashboard"/>
+        </HBox>
+    </bottom>
+</BorderPane>

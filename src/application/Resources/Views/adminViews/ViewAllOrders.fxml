@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8"
+            fx:controller="com.readingroom.controller.ViewAllOrdersController">
+    <top>
+        <VBox alignment="CENTER" spacing="10">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+            <Label text="All Orders" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+            <HBox spacing="10" alignment="CENTER">
+                <ComboBox fx:id="searchCriteriaComboBox" promptText="Search by">
+                    <items>
+                        <FXCollections fx:factory="observableArrayList">
+                            <String fx:value="Order ID" />
+                            <String fx:value="Customer Name" />
+                        </FXCollections>
+                    </items>
+                </ComboBox>
+                <TextField fx:id="searchField" promptText="Enter search term" HBox.hgrow="ALWAYS"/>
+                <Button text="Search" onAction="#handleSearch"/>
+            </HBox>
+        </VBox>
+    </top>
+    
+    <center>
+        <TableView fx:id="orderTableView" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="orderIdColumn" text="Order ID"/>
+                <TableColumn fx:id="customerNameColumn" text="Customer Name"/>
+                <TableColumn fx:id="orderDateColumn" text="Order Date"/>
+                <TableColumn fx:id="totalCostColumn" text="Total Cost"/>
+                <TableColumn fx:id="orderStatusColumn" text="Status"/>
+            </columns>
+        </TableView>
+    </center>
+    
+    <bottom>
+        <HBox spacing="10" alignment="CENTER" style="-fx-padding: 20;">
+            <Button text="View Details" onAction="#handleViewDetails"/>
+            <Button text="Update Status" onAction="#handleUpdateStatus"/>
+            <Button text="Back to Dashboard" onAction="#handleBack"/>
+        </HBox>
+    </bottom>
+</BorderPane>

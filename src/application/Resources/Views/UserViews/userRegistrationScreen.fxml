@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="application.Java_files.Controller.UserRegistrationController"
+      spacing="10">
+
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <!-- Title -->
+    <Label text="User Registration" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+    <!-- Registration Fields -->
+    <TextField fx:id="firstNameField" promptText="First Name" maxWidth="300.0"/>
+    <TextField fx:id="lastNameField" promptText="Last Name" maxWidth="300.0"/>
+    <TextField fx:id="usernameField" promptText="Username" maxWidth="300.0"/>
+    <!-- Date of Birth -->
+    <DatePicker fx:id="dobPicker" promptText="Date of Birth" maxWidth="300.0"/>
+    <PasswordField fx:id="passwordField" promptText="Password" maxWidth="300.0"/>
+    <PasswordField fx:id="confirmPasswordField" promptText="Confirm Password" maxWidth="300.0"/>
+    
+    
+    
+
+    <!-- Registration Button -->
+    <Button text="Register" onAction="#handleRegisterUser" maxWidth="300.0"/>
+
+    <!-- Back to Login -->
+    <Hyperlink text="Already have an account? Login" onAction="#handleBackToLogin"/>
+
+</VBox>

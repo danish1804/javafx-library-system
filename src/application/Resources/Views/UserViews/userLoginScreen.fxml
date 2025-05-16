@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="application.Java_files.Controller.UserLoginController"
+      spacing="10">
+
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <!-- Title -->
+    <Label text="User Login" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+    <!-- Username Field -->
+    <TextField fx:id="usernameField" promptText="Username" maxWidth="300.0"/>
+
+    <!-- Password Field -->
+    <PasswordField fx:id="passwordField" promptText="Password" maxWidth="300.0"/>
+
+    <!-- Login Button -->
+    <Button text="Login" onAction="#handleLogin" maxWidth="300.0"/>
+
+    <!-- Back to Registration Link -->
+    <Hyperlink text="Don't have an account? Register here" onAction="#handleBackToRegister"/>
+
+</VBox>

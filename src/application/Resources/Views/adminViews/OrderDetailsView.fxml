@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<ScrollPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8"
+            fx:controller="com.readingroom.controller.OrderDetailsController">
+    <content>
+        <VBox spacing="20" style="-fx-padding: 20;">
+            <Label text="Order Details" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+            
+            <GridPane vgap="10" hgap="10">
+                <Label text="Order ID:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                <Label fx:id="orderIdLabel" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                
+                <Label text="Customer Name:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                <Label fx:id="customerNameLabel" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                
+                <Label text="Shipping Address:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                <Label fx:id="shippingAddressLabel" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                
+                <Label text="Payment Method:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+                <Label fx:id="paymentMethodLabel" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+                
+                <Label text="Order Date:" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+                <Label fx:id="orderDateLabel" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+                
+                <Label text="Order Status:" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+                <Label fx:id="orderStatusLabel" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+            </GridPane>
+            
+            <Label text="Order Items" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+            
+            <TableView fx:id="orderItemsTable">
+                <columns>
+                    <TableColumn fx:id="bookTitleColumn" text="Book Title"/>
+                    <TableColumn fx:id="physicalCopiesColumn" text="Physical Copies"/>
+                    <TableColumn fx:id="ebookCopiesColumn" text="E-book Copies"/>
+                    <TableColumn fx:id="physicalPriceColumn" text="Physical Price"/>
+                    <TableColumn fx:id="ebookPriceColumn" text="E-book Price"/>
+                    <TableColumn fx:id="totalItemCostColumn" text="Total Item Cost"/>
+                </columns>
+            </TableView>
+            
+            <HBox spacing="20" alignment="CENTER_RIGHT">
+                <Label text="Total Physical Copies:"/>
+                <Label fx:id="totalPhysicalCopiesLabel"/>
+                <Label text="Total E-book Copies:"/>
+                <Label fx:id="totalEbookCopiesLabel"/>
+                <Label text="Total Cost:"/>
+                <Label fx:id="totalCostLabel"/>
+            </HBox>
+            
+            <HBox spacing="10" alignment="CENTER">
+                <Button text="Update Status" onAction="#handleUpdateStatus"/>
+                <Button text="Close" onAction="#handleClose"/>
+            </HBox>
+        </VBox>
+    </content>
+</ScrollPane>

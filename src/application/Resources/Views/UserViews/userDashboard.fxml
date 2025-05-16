@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.application.Java_files.Controller.userDashboardController"
+            prefHeight="600.0" prefWidth="800.0">
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="10" style="-fx-background-color: #f0f0f0; -fx-padding: 10;">
+            <Label fx:id="welcomeLabel" text="Welcome, [First Name]!" style="-fx-font-size: 18px;"/>
+            <Region HBox.hgrow="ALWAYS" />
+            <Button fx:id="logoutButton" text="Logout" onAction="#handleLogout"/>
+        </HBox>
+    </top>
+    
+    <left>
+        <VBox spacing="10" style="-fx-background-color: #e0e0e0; -fx-padding: 10;">
+            <Button fx:id="editProfileButton" text="Edit Profile" onAction="#handleEditProfile" maxWidth="Infinity"/>
+            <Button fx:id="browseBooksButton" text="Browse Books" onAction="#handleBrowseBooks" maxWidth="Infinity"/>
+            <Button fx:id="viewCartButton" text="View Cart" onAction="#handleViewCart" maxWidth="Infinity"/>
+            <Button fx:id="viewOrdersButton" text="View Orders" onAction="#handleViewOrders" maxWidth="Infinity"/>
+            <Button fx:id="exportOrdersButton" text="Export Orders" onAction="#handleExportOrders" maxWidth="Infinity"/>
+        </VBox>
+    </left>
+    
+    <center>
+        <VBox alignment="TOP_CENTER" spacing="20" style="-fx-padding: 20;">
+            <Label text="Top 5 Popular Books" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+            <TableView fx:id="topBooksTable" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn text="Title"/>
+                    <TableColumn text="Author"/>
+                    <TableColumn text="Sold Copies"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+</BorderPane>

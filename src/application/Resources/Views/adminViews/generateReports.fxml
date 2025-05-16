@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8"
+      fx:controller="com.readingroom.controller.GenerateReportsController"
+      spacing="10" alignment="CENTER" style="-fx-padding: 20;">
+    
+    <Label text="Generate Reports" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+    
+    <TabPane>
+        <Tab text="Sales Report">
+            <VBox spacing="10" alignment="CENTER" style="-fx-padding: 20;">
+                <HBox spacing="10" alignment="CENTER">
+                    <Label text="Start Date:"/>
+                    <DatePicker fx:id="startDatePicker">
+                        <tooltip>
+                            <Tooltip text="Select the start date for the sales report."/>
+                        </tooltip>
+                    </DatePicker>
+                    <Label text="End Date:"/>
+                    <DatePicker fx:id="endDatePicker">
+                        <tooltip>
+                            <Tooltip text="Select the end date for the sales report."/>
+                        </tooltip>
+                    </DatePicker>
+                </HBox>
+                <Button text="Generate Sales Report" onAction="#handleGenerateSalesReport"/>
+                <TextArea fx:id="salesReportArea" editable="false" wrapText="true" prefHeight="300" promptText="Generated sales report will appear here..."/>
+            </VBox>
+        </Tab>
+        <Tab text="Top Selling Books">
+            <VBox spacing="10" alignment="CENTER" style="-fx-padding: 20;">
+                <HBox spacing="10" alignment="CENTER">
+                    <Label text="Number of top books:"/>
+                    <TextField fx:id="topBooksCountField" prefWidth="50" promptText="Enter a number">
+                        <tooltip>
+                            <Tooltip text="Enter the number of top-selling books to display."/>
+                        </tooltip>
+                    </TextField>
+                </HBox>
+                <Button text="Generate Top Selling Books Report" onAction="#handleGenerateTopSellingReport"/>
+                <TableView fx:id="topSellingBooksTable" prefHeight="300">
+                    <columns>
+                        <TableColumn fx:id="rankColumn" text="Rank" prefWidth="50"/>
+                        <TableColumn fx:id="bookTitleColumn" text="Book Title" prefWidth="200"/>
+                        <TableColumn fx:id="authorColumn" text="Author" prefWidth="150"/>
+                        <TableColumn fx:id="copiesSoldColumn" text="Copies Sold" prefWidth="100"/>
+                    </columns>
+                    <placeholder>
+                        <Label text="No data available. Generate the report to view the results."/>
+                    </placeholder>
+                </TableView>
+            </VBox>
+        </Tab>
+    </TabPane>
+    
+    <Button text="Back to Dashboard" onAction="#handleBack" style="-fx-padding: 10; -fx-font-weight: bold;"/>
+</VBox>

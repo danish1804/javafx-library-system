@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="application.Controller.adminSalesReportsController"
+      spacing="10">
+    
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <!-- Title -->
+    <Label text="Generate Sales Reports" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+    <!-- Report Type Selection -->
+    <ComboBox fx:id="reportTypeSelector" promptText="Select Sales Report Type" maxWidth="Infinity"/>
+
+    <!-- Date Range (for Sales by Date Range) -->
+    <HBox spacing="10">
+        <DatePicker fx:id="startDatePicker" promptText="Start Date"/>
+        <DatePicker fx:id="endDatePicker" promptText="End Date"/>
+    </HBox>
+
+    <!-- Book / Author / Category Filter Fields -->
+    <TextField fx:id="filterField" promptText="Filter by Book, Author, or Category (if applicable)" maxWidth="Infinity"/>
+
+    <!-- Physical Copies vs. Ebooks Filter -->
+    <ComboBox fx:id="copyTypeSelector" promptText="Filter by Copy Type" maxWidth="Infinity"/>
+
+    <!-- Generate Button -->
+    <Button text="Generate Report" onAction="#handleGenerateReport" styleClass="primary-button"/>
+
+    <!-- Table to Display Results -->
+    <TableView fx:id="reportTableView">
+        <placeholder>
+            <Label text="No data available. Please generate a report."/>
+        </placeholder>
+        <columns>
+            <!-- TableColumns will be dynamically added based on the report type -->
+        </columns>
+    </TableView>
+
+    <!-- Validation Feedback -->
+    <Label fx:id="errorMessage" text="" style="-fx-text-fill: red; -fx-font-size: 12px;" visible="false"/>
+
+</VBox>

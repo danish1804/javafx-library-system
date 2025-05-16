@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry excluding="application/Java_files/Model/|application/ServiceClass/|application/Java_files/Dao/|application/Java_files/Controller/" kind="src" path=""/>
+	<classpathentry kind="src" path="application/Java_files/Controller"/>
+	<classpathentry kind="src" path="application/Java_files/Dao"/>
+	<classpathentry kind="src" path="application/Java_files/Model"/>
+	<classpathentry kind="src" path="application/ServiceClass"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
