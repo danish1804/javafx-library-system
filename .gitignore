@@ -1,1 +1,24 @@
-/bin/
+# Java
+*.class
+bin/
+*.log
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# JavaFX
+build.fxbuild
+
+# IDEs
+.idea/
+.vscode/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Database
+*.db
