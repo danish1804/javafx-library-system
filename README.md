@@ -1,3 +1,11 @@
+![Java](https://img.shields.io/badge/Java-17-blue?logo=java)
+![JavaFX](https://img.shields.io/badge/JavaFX-19+-green?logo=openjdk)
+![GUI](https://img.shields.io/badge/Interface-GUI%20(FXML)-orange)
+![Database](https://img.shields.io/badge/Database-JDBC%20%7C%20SQLite-informational)
+![Architecture](https://img.shields.io/badge/Architecture-MVC-lightgrey)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+![Platform](https://img.shields.io/badge/Platform-Desktop-lightblue)
+
 # 📚 JavaFX Library Management System
 
 This project is a fully-functional desktop-based library and bookstore management system built using JavaFX. It follows the Model-View-Controller (MVC) design pattern and is structured to handle both customer-facing and administrative tasks within a unified graphical user interface.
